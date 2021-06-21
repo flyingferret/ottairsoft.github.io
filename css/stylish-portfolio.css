@@ -29,7 +29,7 @@ body {
     font-weight: 700;
 }
 
-/* Custom red */
+/* Custom OTT */
 .bg-red {
   color: #fff;
   background-color: #b73333;
@@ -48,6 +48,16 @@ body {
     width: 25%;
     top: 20px;
     left: 40px;
+}
+
+.banner{
+    max-height: 20%; 
+}
+
+.dataTable {
+	border-collapse: collapse;
+	text-align: center;
+	width: 100%;
 }
 
 /* Custom Button Styles */
@@ -235,7 +245,7 @@ hr.small {
 /* Call to Action */
 
 .call-to-action {
-    padding: 50px 0;
+    padding: 2px 0;
 }
 
 .call-to-action .btn {

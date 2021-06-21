@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
-{% include head.html %}
-  <body>
-    {% include navigation.html %}
-      {{ content }}
+    {% include head.html %}
+    <body onload="checkGDPR()">
+        {% include navigation.html %}
+        {% include banner.html%}
+        {{ content }}
 
-    {% include footer.html %}
-    {% include scripts.html %}
-  </body>
+        {% include footer.html %}
+        {% include scripts.html %}
+    </body>
 </html>
