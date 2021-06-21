@@ -59,6 +59,12 @@ body {
 	text-align: center;
 	width: 100%;
 }
+th {
+    text-align: center;
+}
+.vertical-align {
+    padding-top: 30px;
+}
 
 /* Custom Button Styles */
 
