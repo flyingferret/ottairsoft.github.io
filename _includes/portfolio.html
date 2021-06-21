@@ -1,45 +1,33 @@
 <section id="portfolio" class="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h2>Our Work</h2>
-        <hr class="small">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-              </a>
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Galleries</h2>
+                <hr class="small">
+                <div class="row">
+
+                    {% comment %}
+                    Get all "photo_set" pages and display a list with links to them.
+                    {% endcomment %}
+                    {% assign photo_pages = site.pages | where: "layout", "gallery_set" %}
+                    {% for photo_page in photo_pages %}
+
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <a href="{{ photo_page.url | prepend: site.baseurl }}">
+                                <img class="img-portfolio img-responsive" src="{{ site.baseurl }}/img/galleries/{{ photo_page.title }}-1.jpg" alt="{{ photo_page.title }}">
+                            </a>
+                        </div>
+                    </div>
+                     {% endfor %}
+
+                </div>
+                <!-- /.row (nested) -->
+                <a href="/galleries/" class="btn btn-dark">Full List</a>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <a href="#">
-                <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
-              </a>
-            </div>
-          </div>
+            <!-- /.col-lg-10 -->
         </div>
-        <!-- /.row (nested) -->
-        <a href="#" class="btn btn-dark">Full Gallery</a>
-      </div>
-      <!-- /.col-lg-10 -->
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 </section>
