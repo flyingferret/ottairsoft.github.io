@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% assign num = page.photos.size %}
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>{{ page.title }}</h1>
+                <ul>
+                    {% for i in (1..num) %}
+                    <li>
+                        <img src="{{ site.baseurl }}/img/galleries/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div>
+                    <a href="{{ site.baseurl }}/photos/">View All Photo Sets</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+

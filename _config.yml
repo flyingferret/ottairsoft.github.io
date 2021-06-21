@@ -1,3 +1,26 @@
-theme: jekyll-theme-cayman
-plugins:
-  - jekyll-seo-tag
+# Site settings
+title:
+email: "ottairsoft.club@mail.com"
+description: "Over The Top Airsoft Adventures (OTT for short) is a UKARA registered airsoft site in Anglesey, North Wales.We have a large 300 acre woodland area, split into different areas. As well as a number of buildings - some of which have multiple floors - with lots of rooms to clear and places to hide."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+
+# User setting
+owner:
+facebook_username:
+facebook_group: "575987882419419"
+twitter_username:
+github_username:
+instagram_username: "ott_airsoftclub"
+address:
+  - line: "Over The Top Adventures" 
+  - line: "Llanerchymedd"
+  # Feel free to add more lines here 
+telephone: "07895478634"
+copyright: 
+
+# API settings
+google_api_key: "AIzaSyAnDNc65oCEW02aqakxqm3ZMmJ72-RJe0s"
+
+# Build settings
+markdown: kramdown

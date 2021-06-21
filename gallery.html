@@ -1,145 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119495723-1"></script>
-		<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag() {
-				dataLayer.push(arguments);
-			}
-  		gtag('js', new Date());
-  		gtag('config', 'UA-119495723-1');
-			ga('set', 'anonymizeIp', true);
-		</script>
+---
+layout: default
+title: Gallery
+permalink: /galleries/
+description: "ENTER HERE"
+---
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>OTT Galleries</h1>
+                <ul>
+                    {% comment %}
+                    Get all "photo_set" pages and display a list with links to them.
+                    {% endcomment %}
+                    {% assign photo_pages = site.pages | where: "layout", "gallery_set" %}
+                    {% for photo_page in photo_pages %}
+                    <li>
+                        <a href="{{ photo_page.url | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/img/galleries/{{ photo_page.title }}-1.jpg" alt="{{ photo_page.title }}"></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
 
-		<script>
-			//Runs if the user accepts the GDPR notice
-			//Hides the notice and stores the decision
-			function acceptGDPR() {
-				document.cookie = "AcceptedGDPR=true"
-				var GDPR = document.getElementById("GDPR");
-				GDPR.style.display = "none";
-			}
-
-			//Checks if the GDPR notice has been accepted
-			//Hides the notice if it has
-			function checkGDPR() {
-				var cookie = document.cookie.split(";")[0];
-				if (cookie == "AcceptedGDPR=true") {
-					GDPR.style.display = "none";
-				}
-			}
-		</script>
-
-		<meta charset="UTF-8"/>
-		<meta name="author" content="Jake Pryce-Jones prycejonesjake@gmail.com"/>
-		<meta name="description" content="Over The Top Airsoft Club (OTT Airsoft Club) (OTT Adventures) Official Website"/>
-		<meta name="Geo.name" content="GB"/>
-		<meta name="Geo.placename" content="anglesey"/>
-		<meta name="Geo.position" content="53.3372126;-4.3013755" />
-		<meta name="keywords" content="adventure,adventures,airsoft,airsoft club,anglesey,army surplus,club,free parking,north wales,official website,ott,over the top,parking,registered,skirmish,uk,ukara,ukara registered,united kingdom,wales"/>
-		<meta name="Subject" content="Image Gallery"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-		<link href="css/class.css" type="text/css" rel="stylesheet"/>
-		<link href="css/keyframe.css" type="text/css" rel="stylesheet"/>
-		<link href="css/element.css" type="text/css" rel="stylesheet"/>
-		<link rel="icon" href="img/logo.jpg">
-		<link rel="author" href="humans.txt"/>
-
-		<title>OTT Airsoft Club</title>
-	</head>
-
-	<body onload="checkGDPR()">
-		<div class="banner">
-			<h1>OTT Airsoft Club</h1>
-      <a href="index.html" class="bannerButton">About Us</a>
-			<a href="contact.html" class="bannerButton">Contact Us</a>
-			<a href="dates.html" class="bannerButton">Events</a>
-			<a href="map.html" class="bannerButton">Find Us</a>
-			<a href="gallery.html" class="bannerButton">Gallery</a>
-			<a href="prices.html" class="bannerButton">Prices</a>
-		</div>
-
-		<div id="GDPR" class="banner">
-			<h2>GDPR Notice</h2>
-			<p>This site makes use of Google Analytics and cookies to help improve your user experience.</P>
-			<p>By using this site, you agree to your IP address and information about your browser being stored and processed by Google Analytics.</p>
-			<p>For more information about Google Analytics, visit <a href="https://privacy.google.com/businesses/compliance">https://privacy.google.com/businesses/compliance</a>.</p>
-
-			<button onclick="acceptGDPR()">I Agree</a>
-			<button onclick="window.history.back()">Go Back</a>
-		</div>
-
-		<div class="galleryBox">
-			<h2>Image Gallery</h2>
-			<p>These are some pictures of us. Most of them have been taken at our site, but some are from our away trips to other sites. Note that Over The Top Airsoft Club does not necessarily own the copyright on all of these images - some of them have been taken by photographers at other sites.</p>
-			<div style="a">
-				<div id="gallery"></div>
-			</div>
-		</div>
-
-		<div class="banner">
-			<a href="index.html" class="bannerButton">About Us</a>
-			<a href="contact.html" class="bannerButton">Contact Us</a>
-			<a href="dates.html" class="bannerButton">Events</a>
-			<a href="map.html" class="bannerButton">Find Us</a>
-			<a href="gallery.html" class="bannerButton">Gallery</a>
-			<a href="prices.html" class="bannerButton">Prices</a>
-			<br/>
-			<p class="banner">&copy; Copyright Over The Top Airsoft Club 2018.</p>
-		</div>
-
-		<script>
-			//Returns a pseudorandom integer such that 0 < n < ceiling
-			function randInt(ceiling) {
-				return Math.ceil(Math.random() * 1000000) % ceiling;
-			}
-
-			//Load images and thumbnails into array
-			var numImages = 67;
-			var imageJSON = "[";
-			for (i = 0; i < numImages; i++) {
-				imageJSON += "{\"image\":\"img/image" + i + ".jpg\", \"thumbnail\":\"img/thumbnail" + i + ".jpg\"}";
-				if (i != numImages - 1) {
-					imageJSON += ",";
-				}
-			}
-			imageJSON += "]";
-			var image = JSON.parse(imageJSON);
-
-			//Calculate how many rows there should be
-			var noRows = Math.floor(numImages / 3);
-			if (numImages % 3 != 0) {
-				noRows++;
-			}
-
-			//Pseudorandomly permute image array
-			for (i = 0; i < numImages; i++) {
-				var randomIndex = randInt(numImages);
-				var swap = image[i];
-				image[i] = image[randomIndex];
-				image[randomIndex] = swap;
-			}
-
-			//Put images into table
-			var text = '<table>';
-			for (i = 0; i < noRows; i++) {
-				for (j = 0; j < 3; j++) {
-					if (3 * i + j >= numImages) {
-						break;
-					} else {
-						text += '<td><table><tr><td width="30%"><a href="';
-						text += image[3 * i + j].image;
-						text += '"><image class="galleryImage" src="';
-						text += image[3 * i + j].thumbnail;
-						text += '"/></a></td></tr></table></td>';
-					}
-				}
-				text += '</tr>';
-			}
-			text += '</table>';
-			document.getElementById('gallery').innerHTML = text;
-		</script>
-	</body>
-</html>
