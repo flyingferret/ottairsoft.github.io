@@ -70,6 +70,7 @@ body {
 
 .watermark::after {
   content: "";
+  pointer-events: none;
   background:url(../img/Dragon.png) no-repeat center center;
   background-size: 50vh auto;
   opacity: 0.1;
