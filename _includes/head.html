@@ -16,6 +16,7 @@
             document.cookie = "AcceptedGDPR=true"
             var GDPR = document.getElementById("GDPR");
             GDPR.style.display = "none";
+            console.log("GDPR Now Accepted")
         }
 
         //Checks if the GDPR notice has been accepted
@@ -24,6 +25,10 @@
             var cookie = document.cookie.split(";")[0];
             if (cookie == "AcceptedGDPR=true") {
                 GDPR.style.display = "none";
+                console.log("GDPR Accepted in past")
+            }else{
+                console.log("GDPR Not Accepted yet")
+                GDPR.style.display = "grid";
             }
         }
     </script>
