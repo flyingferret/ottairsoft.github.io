@@ -3,8 +3,8 @@ title:
 email: "ottairsoft.club@mail.com"
 description: "Over The Top Airsoft Adventures (OTT for short) is a UKARA registered airsoft site in Anglesey, North Wales.We have a large 300 acre woodland area, split into different areas. As well as a number of buildings - some of which have multiple floors - with lots of rooms to clear and places to hide."
 
-#baseurl: "https://flyingferret.github.io/ottairsoft.github.io/" # the subpath of your site, e.g. /blog/
-baseurl: ""
+baseurl: "https://flyingferret.github.io/ottairsoft.github.io/" # the subpath of your site, e.g. /blog/
+
 url: "" # the base hostname & protocol for your site
 
 # User setting
