@@ -59,12 +59,28 @@ body {
 	text-align: center;
 	width: 100%;
 }
-th {
-    text-align: center;
-}
+
 .vertical-align {
     padding-top: 30px;
 }
+
+.watermark {
+
+}
+
+.watermark::after {
+  content: "";
+  background:url(../img/Dragon.png) no-repeat center center;
+  background-size: 50vh auto;
+  opacity: 0.1;
+  top: 10vh;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+
+}
+
 
 /* Custom Button Styles */
 
@@ -98,6 +114,7 @@ th {
 
 hr.small {
     max-width: 100px;
+    margin: 0 auto;
 }
 
 /* Side Menu */

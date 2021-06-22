@@ -5,9 +5,13 @@
         {% include navigation.html %}
         {% include gdpr.html %}
         {% include banner.html%}
-        {{ content }}
+        <div class="row">
+            <div class=" col-md-12 watermark">
+                {{ content }}
 
-        {% include footer.html %}
-        {% include scripts.html %}
+                {% include footer.html %}
+                {% include scripts.html %}
+            </div>
+        </div>
     </body>
 </html>

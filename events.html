@@ -155,12 +155,12 @@ description: "ENTER HERE"
 			//Create HTML
 			var currentDate = new Date();
 			var printedFirstRow = false;
-			var text = '<table class="dataTable"><tr><th>Event</th><th>Start</th><th>End</th></tr>';
+			var text = '<table class="table"><thead class="table-dark"><tr><th scope="col">Event</th><th scope="col">Start</th><th scope="col">End</th></tr></thead>';
 			for (var i = 0; i < event.length; i++) {
 				if (event[i].end > currentDate) {
 					if (i > 0) {
 						if ((event[i].start.getMonth() != event[i - 1].start.getMonth()) && (printedFirstRow)) {
-							text += "<tr><td><br/></td></tr>";
+							text += "<tr><td><br></td><td></td><td></td></tr>";
 						}
 					}
 
