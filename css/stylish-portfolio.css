@@ -68,6 +68,9 @@ body {
 
 }
 
+img{
+    position: relative
+}
 .watermark::after {
   content: "";
   pointer-events: none;
