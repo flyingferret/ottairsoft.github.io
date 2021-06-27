@@ -10,13 +10,17 @@
                     Get all "photo_set" pages and display a list with links to them.
                     {% endcomment %}
                     {% assign photo_pages = site.pages | where: "layout", "gallery_set" %}
+                    
                     {% for photo_page in photo_pages %}
-
+                        {% if forloop.index == 5 %}
+                            {% break %}
+                        {% endif %}
                     <div class="col-md-6">
                         <div class="portfolio-item">
                             <a href="{{ photo_page.url | prepend: site.baseurl }}">
                                 <img class="img-portfolio img-fluid" src="{{ site.baseurl }}/img/galleries/{{ photo_page.title }}-1.jpg" alt="{{ photo_page.title }}">
                             </a>
+                            <p> {{ photo_page.title }}</p>
                         </div>
                     </div>
                      {% endfor %}

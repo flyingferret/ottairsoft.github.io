@@ -4,6 +4,6 @@ title: Archive1
 permalink: /Archive1/
 description: "Archive Photos"
 photos:
-    set: Archive1
-    size: 24
+  set: Archive1
+  size: 24
 ---
